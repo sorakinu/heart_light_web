@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heart Light</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle, #fff2e6, #ffd9b3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 3s ease;
+  }
+  .heart {
+    font-size: 120px;
+    animation: breathe 6s ease-in-out infinite;
+  }
+  @keyframes breathe {
+    0%,100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+</style>
+</head>
+<body>
+
+<div class="heart">🧡</div>
+
+<audio id="sound" loop>
+  <source src="breath.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.body.addEventListener("click", () => {
+  document.getElementById("sound").play();
+});
+</script>
+
+</body>
+</html>
